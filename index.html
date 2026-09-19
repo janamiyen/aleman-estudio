@@ -27,11 +27,12 @@
           },
           colors: {
             brand: {
-              gold: '#c5a059',
-              goldLight: '#dfc285',
-              dark: '#0d1520',
-              navy: '#131e2e',
-              slate: '#1b2a40',
+              gold: '#d4af37',
+              goldLight: '#f3e5ab',
+              dark: '#050505',
+              navy: '#0c0c0d',
+              card: '#121214',
+              border: '#242429',
               accent: '#0284c7',
             }
           }
@@ -42,22 +43,22 @@
 
   <style>
     .glass-nav {
-      background: rgba(13, 21, 32, 0.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+      background: rgba(8, 8, 9, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     }
     .hero-glow {
-      background: radial-gradient(circle at 70% 30%, rgba(197, 160, 89, 0.12) 0%, transparent 60%),
-                  radial-gradient(circle at 20% 80%, rgba(2, 132, 199, 0.1) 0%, transparent 60%);
+      background: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 55%),
+                  radial-gradient(circle at 20% 80%, rgba(20, 20, 25, 0.8) 0%, transparent 60%);
     }
     .gold-gradient-text {
-      background: linear-gradient(135deg, #f3e7c4 0%, #c5a059 50%, #dfc285 100%);
+      background: linear-gradient(135deg, #fff7d6 0%, #d4af37 50%, #f3e5ab 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .gold-border {
-      border: 1px solid rgba(197, 160, 89, 0.25);
+      border: 1px solid rgba(212, 175, 55, 0.22);
     }
     .card-hover {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -72,7 +73,7 @@
 <body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
 
   <!-- Top Credential Bar -->
-  <div class="bg-black text-xs py-2 px-4 border-b border-slate-800/80 text-slate-400">
+  <div class="bg-black text-xs py-2 px-4 border-b border-neutral-800/80/80 text-slate-400">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -130,7 +131,7 @@
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-b border-brand-gold/20 px-6 py-4 space-y-3">
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0e0e11] border-b border-brand-gold/20 px-6 py-4 space-y-3">
       <a href="#inicio" class="block text-slate-200 py-1">Inicio</a>
       <a href="#especialidades" class="block text-slate-200 py-1">Áreas de Práctica</a>
       <a href="#estafas" class="block text-slate-200 py-1">Estafas Bancarias</a>
@@ -145,7 +146,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="inicio" class="relative hero-glow pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden border-b border-slate-800">
+  <section id="inicio" class="relative hero-glow pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden border-b border-neutral-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         
@@ -166,20 +167,20 @@
           </p>
 
           <!-- Credential Badges -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-4 border-y border-slate-800">
-            <div class="p-3 bg-brand-navy/60 rounded-xl gold-border">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-4 border-y border-neutral-800/80">
+            <div class="p-3 bg-[#0f0f12]/80 rounded-xl gold-border">
               <span class="block text-xs font-bold text-brand-gold">UBA</span>
               <span class="text-[11px] text-slate-400">Abogada Graduada</span>
             </div>
-            <div class="p-3 bg-brand-navy/60 rounded-xl gold-border">
+            <div class="p-3 bg-[#0f0f12]/80 rounded-xl gold-border">
               <span class="block text-xs font-bold text-brand-gold">CPACF</span>
               <span class="text-[11px] text-slate-400">Comisión Consumo</span>
             </div>
-            <div class="p-3 bg-brand-navy/60 rounded-xl gold-border">
+            <div class="p-3 bg-[#0f0f12]/80 rounded-xl gold-border">
               <span class="block text-xs font-bold text-brand-gold">UCU</span>
               <span class="text-[11px] text-slate-400">Abogada Delegada</span>
             </div>
-            <div class="p-3 bg-brand-navy/60 rounded-xl gold-border">
+            <div class="p-3 bg-[#0f0f12]/80 rounded-xl gold-border">
               <span class="block text-xs font-bold text-brand-gold">UCCuyo</span>
               <span class="text-[11px] text-slate-400">Docente Derecho</span>
             </div>
@@ -191,7 +192,7 @@
               <img src="assets/wsp-gold-transp.png" alt="WhatsApp Dorado" class="w-6 h-6 object-contain filter drop-shadow group-hover:rotate-12 transition" />
               <span>Iniciar Reclamo por WhatsApp</span>
             </a>
-            <a href="#calculadora" class="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-slate gold-border text-slate-200 font-semibold px-7 py-3.5 rounded-xl transition">
+            <a href="#calculadora" class="inline-flex items-center gap-2 bg-[#0e0e11] hover:bg-[#18181d] gold-border text-slate-200 font-semibold px-7 py-3.5 rounded-xl transition">
               <i data-lucide="calculator" class="w-4 h-4 text-brand-gold"></i>
               <span>Calcular Multa Plan de Ahorro</span>
             </a>
@@ -200,14 +201,14 @@
 
         <!-- Profile Card Visual -->
         <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md bg-brand-navy rounded-3xl p-6 shadow-2xl gold-border">
+          <div class="relative mx-auto max-w-md bg-[#0e0e11] rounded-3xl p-6 shadow-2xl gold-border">
             
             <div class="absolute -top-3 -right-3 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
               <i data-lucide="award" class="w-3.5 h-3.5"></i> Compromiso Ético
             </div>
 
             <!-- Profile Image Container -->
-            <div class="relative aspect-[4/5] w-full rounded-2xl overflow-hidden mb-5 bg-slate-900 shadow-inner">
+            <div class="relative aspect-[4/5] w-full rounded-2xl overflow-hidden mb-5 bg-[#0a0a0c] shadow-inner">
               <img src="assets/daniela.png" 
                    alt="Dra. Daniela A. Aleman" 
                    class="object-cover object-top w-full h-full"
@@ -221,7 +222,7 @@
               </div>
             </div>
 
-            <div class="space-y-2.5 text-xs text-slate-300 bg-brand-dark/70 p-4 rounded-xl border border-slate-800">
+            <div class="space-y-2.5 text-xs text-slate-300 bg-brand-dark/70 p-4 rounded-xl border border-neutral-800/80">
               <div class="flex items-center gap-2">
                 <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold shrink-0"></i>
                 <span>Atención personalizada sin intermediarios</span>
@@ -256,7 +257,7 @@
       <div class="grid md:grid-cols-3 gap-8">
         
         <!-- Card 1: Estafas Electrónicas -->
-        <div id="estafas" class="bg-brand-navy p-8 rounded-2xl gold-border card-hover space-y-4">
+        <div id="estafas" class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
           <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
             <i data-lucide="smartphone" class="w-6 h-6"></i>
           </div>
@@ -271,7 +272,7 @@
         </div>
 
         <!-- Card 2: Planes de Ahorro -->
-        <div id="planes-ahorro" class="bg-brand-navy p-8 rounded-2xl gold-border card-hover space-y-4">
+        <div id="planes-ahorro" class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
           <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
             <i data-lucide="car" class="w-6 h-6"></i>
           </div>
@@ -286,7 +287,7 @@
         </div>
 
         <!-- Card 3: Seguros -->
-        <div class="bg-brand-navy p-8 rounded-2xl gold-border card-hover space-y-4">
+        <div class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
           <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
             <i data-lucide="shield-check" class="w-6 h-6"></i>
           </div>
@@ -301,7 +302,7 @@
         </div>
 
         <!-- Card 4: Defensa del Consumidor & Pozo -->
-        <div class="bg-brand-navy p-8 rounded-2xl gold-border card-hover space-y-4">
+        <div class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
           <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
             <i data-lucide="building" class="w-6 h-6"></i>
           </div>
@@ -316,7 +317,7 @@
         </div>
 
         <!-- Card 5: Derecho Laboral -->
-        <div class="bg-brand-navy p-8 rounded-2xl gold-border card-hover space-y-4">
+        <div class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
           <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
             <i data-lucide="briefcase" class="w-6 h-6"></i>
           </div>
@@ -331,7 +332,7 @@
         </div>
 
         <!-- Card 6: Sucesiones & Divorcios -->
-        <div class="bg-brand-navy p-8 rounded-2xl gold-border card-hover space-y-4">
+        <div class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
           <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
             <i data-lucide="users" class="w-6 h-6"></i>
           </div>
@@ -350,7 +351,7 @@
   </section>
 
   <!-- Calculadora de Multa por Demora de Plan de Ahorro -->
-  <section id="calculadora" class="py-20 bg-brand-navy border-y border-slate-800">
+  <section id="calculadora" class="py-20 bg-[#0e0e11] border-y border-neutral-800/80">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-brand-dark p-8 sm:p-12 rounded-3xl gold-border shadow-2xl space-y-6 text-center">
         
@@ -366,7 +367,7 @@
           Si ya saliste adjudicado o abonaste la alícuota extraordinaria y pasaron los días establecidos por contrato, <strong>te corresponde cobrar una multa diaria en pesos</strong> por cada día de demora acumulado.
         </p>
 
-        <div class="p-6 bg-brand-navy rounded-2xl gold-border max-w-lg mx-auto text-left space-y-3 text-xs text-slate-300">
+        <div class="p-6 bg-[#0e0e11] rounded-2xl gold-border max-w-lg mx-auto text-left space-y-3 text-xs text-slate-300">
           <p class="font-bold text-brand-gold text-sm">Pasos para calcular tu indemnización:</p>
           <p>1. Envianos por WhatsApp una foto del contrato o pedido de unidad.</p>
           <p>2. Indicá la fecha de adjudicación y cuotas al día.</p>
@@ -418,7 +419,7 @@
           </div>
         </div>
 
-        <div class="bg-brand-navy p-8 rounded-3xl gold-border space-y-6">
+        <div class="bg-[#0e0e11] p-8 rounded-3xl gold-border space-y-6">
           <h3 class="font-serif text-2xl font-bold text-white">¿Cómo trabajamos?</h3>
           
           <div class="space-y-4">
@@ -453,7 +454,7 @@
   </section>
 
   <!-- Contacto & Ubicación -->
-  <section id="contacto" class="py-20 bg-brand-navy border-t border-slate-800">
+  <section id="contacto" class="py-20 bg-[#0e0e11] border-t border-neutral-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid lg:grid-cols-2 gap-12">
@@ -474,17 +475,17 @@
               <span class="text-sm">Sedes: Ciudad Autónoma de Buenos Aires y Avellaneda</span>
             </div>
 
-            <a href="https://api.whatsapp.com/send?phone=5491168559325" target="_blank" class="flex items-center gap-3 p-4 bg-brand-dark hover:bg-slate-900 rounded-xl gold-border transition">
+            <a href="https://api.whatsapp.com/send?phone=5491168559325" target="_blank" class="flex items-center gap-3 p-4 bg-brand-dark hover:bg-[#0a0a0c] rounded-xl gold-border transition">
               <i data-lucide="phone" class="w-5 h-5 text-emerald-400 shrink-0"></i>
               <span class="text-sm font-semibold">+54 9 11 6855-9325</span>
             </a>
 
-            <a href="mailto:alemandaestudio@gmail.com" class="flex items-center gap-3 p-4 bg-brand-dark hover:bg-slate-900 rounded-xl gold-border transition">
+            <a href="mailto:alemandaestudio@gmail.com" class="flex items-center gap-3 p-4 bg-brand-dark hover:bg-[#0a0a0c] rounded-xl gold-border transition">
               <i data-lucide="mail" class="w-5 h-5 text-sky-400 shrink-0"></i>
               <span class="text-sm">alemandaestudio@gmail.com</span>
             </a>
 
-            <a href="https://www.instagram.com/daalemanestudio" target="_blank" class="flex items-center gap-3 p-4 bg-brand-dark hover:bg-slate-900 rounded-xl gold-border transition">
+            <a href="https://www.instagram.com/daalemanestudio" target="_blank" class="flex items-center gap-3 p-4 bg-brand-dark hover:bg-[#0a0a0c] rounded-xl gold-border transition">
               <i data-lucide="instagram" class="w-5 h-5 text-pink-400 shrink-0"></i>
               <span class="text-sm font-semibold">@daalemanestudio</span>
             </a>
@@ -500,17 +501,17 @@
             <input type="hidden" name="phone" value="5491168559325" />
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1">Nombre y Apellido</label>
-              <input type="text" required placeholder="Tu nombre completo" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold" />
+              <input type="text" required placeholder="Tu nombre completo" class="w-full bg-[#0e0e11] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold" />
             </div>
 
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1">Teléfono / WhatsApp</label>
-              <input type="tel" required placeholder="11 XXXX-XXXX" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold" />
+              <input type="tel" required placeholder="11 XXXX-XXXX" class="w-full bg-[#0e0e11] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold" />
             </div>
 
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1">Motivo de Consulta</label>
-              <select class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+              <select class="w-full bg-[#0e0e11] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
                 <option>Estafa Electrónica / Phishing Bancario</option>
                 <option>Demora o Aumento en Plan de Ahorro</option>
                 <option>Reclamo contra Compañía de Seguros</option>
@@ -555,7 +556,7 @@
   </script>
   <!-- Botón Flotante WhatsApp Dorado de Lujo -->
   <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%20Aleman%2C%20tengo%20una%20consulta%20urgente." target="_blank" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-brand-dark/90 hover:bg-brand-dark backdrop-blur-md gold-border p-2.5 pr-4 rounded-full shadow-2xl shadow-brand-gold/20 group transition duration-300 hover:scale-105">
-    <div class="w-11 h-11 rounded-full bg-brand-navy flex items-center justify-center p-1.5 shadow-inner">
+    <div class="w-11 h-11 rounded-full bg-[#0e0e11] flex items-center justify-center p-1.5 shadow-inner">
       <img src="assets/wsp-gold-transp.png" alt="WhatsApp Dorado" class="w-full h-full object-contain group-hover:rotate-12 transition" />
     </div>
     <div class="hidden sm:block text-left">
