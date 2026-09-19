@@ -68,6 +68,26 @@
       border-color: rgba(197, 160, 89, 0.6);
       box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(197, 160, 89, 0.15);
     }
+
+    /* Stacking Cards Accordion Effect */
+    .stack-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+    }
+    .stack-card {
+      position: sticky;
+      background: linear-gradient(135deg, #131318 0%, #09090b 100%);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+      will-change: transform;
+    }
+    .stack-card:nth-child(1) { top: 96px; }
+    .stack-card:nth-child(2) { top: 126px; }
+    .stack-card:nth-child(3) { top: 156px; }
+    .stack-card:nth-child(4) { top: 186px; }
+    .stack-card:nth-child(5) { top: 216px; }
+    .stack-card:nth-child(6) { top: 246px; }
   </style>
 </head>
 <body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
@@ -118,8 +138,10 @@
 
       <!-- CTA Button con Logo WhatsApp Dorado -->
       <div class="hidden sm:flex items-center gap-3">
-        <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%20Aleman%2C%20necesito%20hacerle%20una%20consulta%20legal." target="_blank" class="inline-flex items-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight hover:from-brand-goldLight hover:to-brand-gold text-brand-dark font-bold text-sm px-5 py-2 rounded-full shadow-lg shadow-brand-gold/25 transition group hover:scale-105">
-          <img src="assets/wsp-gold-transp.png" alt="WhatsApp Dorado" class="w-5 h-5 object-contain filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] group-hover:rotate-6 transition" />
+        <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%20Aleman%2C%20necesito%20hacerle%20una%20consulta%20legal." target="_blank" class="inline-flex items-center gap-2.5 bg-[#0e0e11] hover:bg-[#16161c] text-brand-gold hover:text-brand-goldLight border border-brand-gold/40 hover:border-brand-gold font-bold text-sm px-4 py-1.5 rounded-full shadow-lg shadow-black/80 transition group hover:scale-105">
+          <div class="w-6 h-6 rounded-full bg-black flex items-center justify-center p-0.5 border border-brand-gold/30">
+            <img src="assets/wsp-gold-clean.png" alt="WhatsApp Dorado" class="w-full h-full object-contain group-hover:rotate-6 transition" />
+          </div>
           <span>WhatsApp Directo</span>
         </a>
       </div>
@@ -189,7 +211,7 @@
           <!-- Buttons -->
           <div class="flex flex-wrap gap-4 pt-2">
             <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20fui%20v%C3%ADctima%20de%20una%20estafa%20bancaria%20%2F%20tengo%20un%20problema%20con%20un%20plan%20de%20ahorro." target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-brand-gold to-brand-goldLight hover:from-brand-goldLight hover:to-brand-gold text-brand-dark font-bold px-7 py-3.5 rounded-xl shadow-xl shadow-brand-gold/20 transition hover:scale-105 group">
-              <img src="assets/wsp-gold-transp.png" alt="WhatsApp Dorado" class="w-6 h-6 object-contain filter drop-shadow group-hover:rotate-12 transition" />
+              <img src="assets/wsp-gold-clean.png" alt="WhatsApp Dorado" class="w-6 h-6 object-contain filter drop-shadow group-hover:rotate-12 transition" />
               <span>Iniciar Reclamo por WhatsApp</span>
             </a>
             <a href="#calculadora" class="inline-flex items-center gap-2 bg-[#0e0e11] hover:bg-[#18181d] gold-border text-slate-200 font-semibold px-7 py-3.5 rounded-xl transition">
@@ -254,99 +276,151 @@
         <div class="w-16 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="max-w-4xl mx-auto stack-cards-container pb-28">
         
         <!-- Card 1: Estafas Electrónicas -->
-        <div id="estafas" class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
-            <i data-lucide="smartphone" class="w-6 h-6"></i>
+        <div id="estafas" class="stack-card rounded-3xl p-7 sm:p-10 gold-border shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-brand-gold/50">
+          <div class="space-y-3 max-w-2xl">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono font-bold text-brand-gold px-2.5 py-1 rounded bg-brand-gold/10 border border-brand-gold/30">01 / ESPECIALIDAD</span>
+              <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Phishing & Ciberfraude</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+              <span>Estafas Electrónicas</span>
+              <i data-lucide="smartphone" class="w-6 h-6 text-brand-gold"></i>
+            </h3>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Defensa urgente ante phishing bancario, hackeos de WhatsApp, transferencias no autorizadas, préstamos pre-aprobados por ciberdelincuentes y débitos indebidos en billeteras virtuales. Intimamos al banco exigiendo la nulidad de deudas más daño punitivo resarcitorio.
+            </p>
           </div>
-          <h3 class="font-serif text-xl font-bold text-white">Estafas Electrónicas</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            Phishing bancario, hackeos de WhatsApp, transferencias no autorizadas, créditos pre-aprobados sacados por delincuentes y débitos indebidos en billeteras virtuales. Intimamos al banco y pedimos la nulidad de la deuda más daño punitivo.
-          </p>
-          <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20sufr%C3%AD%20una%20estafa%20electr%C3%B3nica%20y%20quiero%20hacer%20el%20reclamo." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-gold hover:text-brand-goldLight pt-2">
-            <span>Iniciar reclamo por estafa</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
+          <div class="shrink-0 w-full md:w-auto">
+            <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20sufr%C3%AD%20una%20estafa%20electr%C3%B3nica%20y%20quiero%20hacer%20el%20reclamo." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
+              <img src="assets/wsp-gold-clean.png" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <span>Iniciar Reclamo</span>
+            </a>
+          </div>
         </div>
 
         <!-- Card 2: Planes de Ahorro -->
-        <div id="planes-ahorro" class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
-            <i data-lucide="car" class="w-6 h-6"></i>
+        <div id="planes-ahorro" class="stack-card rounded-3xl p-7 sm:p-10 gold-border shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-brand-gold/50">
+          <div class="space-y-3 max-w-2xl">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono font-bold text-brand-gold px-2.5 py-1 rounded bg-brand-gold/10 border border-brand-gold/30">02 / ESPECIALIDAD</span>
+              <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Litigios Automotrices</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+              <span>Planes de Ahorro</span>
+              <i data-lucide="car" class="w-6 h-6 text-brand-gold"></i>
+            </h3>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Acciones legales por aumentos abusivos de cuotas, demoras injustificadas en la entrega de la unidad adjudicada y rescisión contractual con reintegro actualizado de haberes netos. Exigimos la multa diaria por mora según ley.
+            </p>
           </div>
-          <h3 class="font-serif text-xl font-bold text-white">Planes de Ahorro</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            Aumentos desproporcionados de cuotas, demoras injustificadas en la entrega de la unidad adjudicada, cláusulas abusivas, renuncia al plan y reintegro actualizado de haberes netos. Exigimos la multa diaria estipulada por ley.
-          </p>
-          <a href="#calculadora" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-gold hover:text-brand-goldLight pt-2">
-            <span>Calcular multa por demora</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
+          <div class="shrink-0 w-full md:w-auto flex flex-col sm:flex-row gap-2.5">
+            <a href="#calculadora" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold text-sm px-5 py-3 rounded-2xl border border-white/20 transition">
+              <i data-lucide="calculator" class="w-4 h-4 text-brand-gold"></i>
+              <span>Calcular Multa</span>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20un%20problema%20con%20mi%20Plan%20de%20Ahorro." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-5 py-3 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
+              <img src="assets/wsp-gold-clean.png" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <span>Consultar Plan</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Card 3: Seguros -->
-        <div class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
-            <i data-lucide="shield-check" class="w-6 h-6"></i>
+        <!-- Card 3: Reclamos a Seguros -->
+        <div class="stack-card rounded-3xl p-7 sm:p-10 gold-border shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-brand-gold/50">
+          <div class="space-y-3 max-w-2xl">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono font-bold text-brand-gold px-2.5 py-1 rounded bg-brand-gold/10 border border-brand-gold/30">03 / ESPECIALIDAD</span>
+              <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Pólizas & Siniestros</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+              <span>Reclamos a Seguros</span>
+              <i data-lucide="shield-check" class="w-6 h-6 text-brand-gold"></i>
+            </h3>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Rechazos arbitrarios de siniestros, destrucción total de automotores no reconocida y sumas aseguradas congeladas o desactualizadas por inflación. Exigimos cumplimiento forzado con intereses y resarcimiento económico integral.
+            </p>
           </div>
-          <h3 class="font-serif text-xl font-bold text-white">Reclamos a Seguros</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            Rechazos arbitrarios de siniestros, sumas aseguradas desactualizadas por inflación, robo de vehículos y destrucción total. Hacemos cumplir las pólizas exigiendo intereses y resarcimiento económico integral.
-          </p>
-          <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20un%20conflicto%20con%20una%20compa%C3%B1%C3%ADa%20de%20seguros." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-gold hover:text-brand-goldLight pt-2">
-            <span>Consultar por seguro</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
+          <div class="shrink-0 w-full md:w-auto">
+            <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20un%20conflicto%20con%20una%20compa%C3%B1%C3%ADa%20de%20seguros." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
+              <img src="assets/wsp-gold-clean.png" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <span>Reclamar a Seguro</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Card 4: Defensa del Consumidor & Pozo -->
-        <div class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
-            <i data-lucide="building" class="w-6 h-6"></i>
+        <!-- Card 4: Compras de Pozo & Consumo -->
+        <div class="stack-card rounded-3xl p-7 sm:p-10 gold-border shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-brand-gold/50">
+          <div class="space-y-3 max-w-2xl">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono font-bold text-brand-gold px-2.5 py-1 rounded bg-brand-gold/10 border border-brand-gold/30">04 / ESPECIALIDAD</span>
+              <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Inmobiliario & Salud</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+              <span>Compras de Pozo & Consumo</span>
+              <i data-lucide="building" class="w-6 h-6 text-brand-gold"></i>
+            </h3>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Incumplimiento de plazos en fideicomisos inmobiliarios y compras en pozo. Amparos ante obras sociales y prepagas por cobertura médica, garantías denegadas y deudas indebidas en resúmenes de tarjetas de crédito.
+            </p>
           </div>
-          <h3 class="font-serif text-xl font-bold text-white">Compras de Pozo & Consumo</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            Incumplimiento de plazos en fideicomisos inmobiliarios y compras de pozo. Reclamos contra obras sociales, garantías denegadas, publicidad engañosa y deudas indebidas en tarjetas de crédito.
-          </p>
-          <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20quiero%20consultar%20por%20una%20compra%20de%20pozo%20%2F%20consumo." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-gold hover:text-brand-goldLight pt-2">
-            <span>Reclamar por consumo</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
+          <div class="shrink-0 w-full md:w-auto">
+            <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20quiero%20consultar%20por%20una%20compra%20de%20pozo%20%2F%20consumo." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
+              <img src="assets/wsp-gold-clean.png" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <span>Consultar Caso</span>
+            </a>
+          </div>
         </div>
 
         <!-- Card 5: Derecho Laboral -->
-        <div class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
-            <i data-lucide="briefcase" class="w-6 h-6"></i>
+        <div class="stack-card rounded-3xl p-7 sm:p-10 gold-border shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-brand-gold/50">
+          <div class="space-y-3 max-w-2xl">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono font-bold text-brand-gold px-2.5 py-1 rounded bg-brand-gold/10 border border-brand-gold/30">05 / ESPECIALIDAD</span>
+              <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Trabajo & SECLO</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+              <span>Derecho Laboral</span>
+              <i data-lucide="briefcase" class="w-6 h-6 text-brand-gold"></i>
+            </h3>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Despidos arbitrarios con y sin causa, empleo no registrado ("en negro"), diferencias de liquidación final, reclamos ante ART por accidentes de trabajo y representación experta en audiencias de SECLO.
+            </p>
           </div>
-          <h3 class="font-serif text-xl font-bold text-white">Derecho Laboral</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            Despidos con y sin causa, trabajo no registrado ("en negro"), diferencias de liquidación, audiencias en SECLO y accidentes de trabajo (ART). Defensa implacable de los derechos del trabajador.
-          </p>
-          <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20una%20consulta%20por%20un%20tema%20laboral%20%2F%20despido." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-gold hover:text-brand-goldLight pt-2">
-            <span>Calcular indemnización</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
+          <div class="shrink-0 w-full md:w-auto">
+            <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20una%20consulta%20por%20un%20tema%20laboral%20%2F%20despido." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
+              <img src="assets/wsp-gold-clean.png" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <span>Asesoría Laboral</span>
+            </a>
+          </div>
         </div>
 
         <!-- Card 6: Sucesiones & Divorcios -->
-        <div class="bg-[#0e0e11] p-8 rounded-2xl gold-border card-hover space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center">
-            <i data-lucide="users" class="w-6 h-6"></i>
+        <div class="stack-card rounded-3xl p-7 sm:p-10 gold-border shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-brand-gold/50">
+          <div class="space-y-3 max-w-2xl">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono font-bold text-brand-gold px-2.5 py-1 rounded bg-brand-gold/10 border border-brand-gold/30">06 / ESPECIALIDAD</span>
+              <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Familia & Patrimonio</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+              <span>Sucesiones & Divorcios</span>
+              <i data-lucide="users" class="w-6 h-6 text-brand-gold"></i>
+            </h3>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Declaratorias de herederos, venta de inmuebles y automotores por tracto abreviado en CABA y Provincia de Buenos Aires. Divorcios de mutuo acuerdo y acuerdos de división patrimonial equitativa.
+            </p>
           </div>
-          <h3 class="font-serif text-xl font-bold text-white">Sucesiones & Divorcios</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            Declaratorias de herederos, sucesiones inmobiliarias y vehiculares con tracto abreviado en CABA y Provincia de Buenos Aires. Divorcios de mutuo acuerdo y acuerdos patrimoniales.
-          </p>
-          <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20quiero%20iniciar%20un%20tr%C3%A1mite%20sucesorio%20%2F%20divorcio." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-gold hover:text-brand-goldLight pt-2">
-            <span>Iniciar sucesión o divorcio</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
+          <div class="shrink-0 w-full md:w-auto">
+            <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20quiero%20iniciar%20un%20tr%C3%A1mite%20sucesorio%20%2F%20divorcio." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
+              <img src="assets/wsp-gold-clean.png" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <span>Iniciar Trámite</span>
+            </a>
+          </div>
         </div>
 
-      </div>
+      </div></div>
     </div>
   </section>
 
@@ -376,7 +450,7 @@
 
         <div class="pt-2">
           <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20demora%20en%20la%20entrega%20de%20mi%20plan%20de%20ahorro%20y%20quiero%20calcular%20la%20multa." target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-brand-gold to-brand-goldLight hover:from-brand-goldLight hover:to-brand-gold text-brand-dark font-bold px-8 py-4 rounded-2xl shadow-xl shadow-brand-gold/20 transition hover:scale-105 group">
-            <img src="assets/wsp-gold-transp.png" alt="WhatsApp Dorado" class="w-6 h-6 object-contain filter drop-shadow group-hover:rotate-12 transition" />
+            <img src="assets/wsp-gold-clean.png" alt="WhatsApp Dorado" class="w-6 h-6 object-contain filter drop-shadow group-hover:rotate-12 transition" />
             <span>Calcular Multa por WhatsApp Ahora</span>
           </a>
         </div>
@@ -557,7 +631,7 @@
   <!-- Botón Flotante WhatsApp Dorado de Lujo -->
   <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%20Aleman%2C%20tengo%20una%20consulta%20urgente." target="_blank" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-brand-dark/90 hover:bg-brand-dark backdrop-blur-md gold-border p-2.5 pr-4 rounded-full shadow-2xl shadow-brand-gold/20 group transition duration-300 hover:scale-105">
     <div class="w-11 h-11 rounded-full bg-[#0e0e11] flex items-center justify-center p-1.5 shadow-inner">
-      <img src="assets/wsp-gold-transp.png" alt="WhatsApp Dorado" class="w-full h-full object-contain group-hover:rotate-12 transition" />
+      <img src="assets/wsp-gold-clean.png" alt="WhatsApp Dorado" class="w-full h-full object-contain group-hover:rotate-12 transition" />
     </div>
     <div class="hidden sm:block text-left">
       <span class="block text-[10px] text-slate-400 leading-none">Consulta Directa</span>
