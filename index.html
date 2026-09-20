@@ -9,6 +9,10 @@
   <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png" />
 
+  <!-- Smooth Scroll (Lenis) -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
+
   <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,6 +71,24 @@
       transform: translateY(-6px);
       border-color: rgba(197, 160, 89, 0.6);
       box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(197, 160, 89, 0.15);
+    }
+
+
+    /* Ultra Smooth Scroll & Editorial Feel */
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+    .lenis.lenis-smooth iframe {
+      pointer-events: none;
     }
 
     /* Stacking Cards Accordion Effect */
@@ -211,7 +233,9 @@
           <!-- Buttons -->
           <div class="flex flex-wrap gap-4 pt-2">
             <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20fui%20v%C3%ADctima%20de%20una%20estafa%20bancaria%20%2F%20tengo%20un%20problema%20con%20un%20plan%20de%20ahorro." target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-brand-gold to-brand-goldLight hover:from-brand-goldLight hover:to-brand-gold text-brand-dark font-bold px-7 py-3.5 rounded-xl shadow-xl shadow-brand-gold/20 transition hover:scale-105 group">
-              <img src="assets/wsp-gold-clean.png?v=1789843136" alt="WhatsApp Dorado" class="w-6 h-6 object-contain filter drop-shadow group-hover:rotate-12 transition" />
+              <svg class="w-6 h-6 shrink-0 fill-current text-brand-dark group-hover:rotate-12 transition duration-300" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
               <span>Iniciar Reclamo por WhatsApp</span>
             </a>
             <a href="#calculadora" class="inline-flex items-center gap-2 bg-[#0e0e11] hover:bg-[#18181d] gold-border text-slate-200 font-semibold px-7 py-3.5 rounded-xl transition">
@@ -295,7 +319,9 @@
           </div>
           <div class="shrink-0 w-full md:w-auto">
             <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20sufr%C3%AD%20una%20estafa%20electr%C3%B3nica%20y%20quiero%20hacer%20el%20reclamo." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
-              <img src="assets/wsp-gold-clean.png?v=1789843136" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <svg class="w-5 h-5 shrink-0 fill-current text-brand-dark group-hover:rotate-6 transition duration-300" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
               <span>Iniciar Reclamo</span>
             </a>
           </div>
@@ -322,7 +348,9 @@
               <span>Calcular Multa</span>
             </a>
             <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20un%20problema%20con%20mi%20Plan%20de%20Ahorro." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-5 py-3 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
-              <img src="assets/wsp-gold-clean.png?v=1789843136" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <svg class="w-5 h-5 shrink-0 fill-current text-brand-dark group-hover:rotate-6 transition duration-300" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
               <span>Consultar Plan</span>
             </a>
           </div>
@@ -345,7 +373,9 @@
           </div>
           <div class="shrink-0 w-full md:w-auto">
             <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20un%20conflicto%20con%20una%20compa%C3%B1%C3%ADa%20de%20seguros." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
-              <img src="assets/wsp-gold-clean.png?v=1789843136" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <svg class="w-5 h-5 shrink-0 fill-current text-brand-dark group-hover:rotate-6 transition duration-300" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
               <span>Reclamar a Seguro</span>
             </a>
           </div>
@@ -368,7 +398,9 @@
           </div>
           <div class="shrink-0 w-full md:w-auto">
             <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20quiero%20consultar%20por%20una%20compra%20de%20pozo%20%2F%20consumo." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
-              <img src="assets/wsp-gold-clean.png?v=1789843136" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <svg class="w-5 h-5 shrink-0 fill-current text-brand-dark group-hover:rotate-6 transition duration-300" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
               <span>Consultar Caso</span>
             </a>
           </div>
@@ -391,7 +423,9 @@
           </div>
           <div class="shrink-0 w-full md:w-auto">
             <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20una%20consulta%20por%20un%20tema%20laboral%20%2F%20despido." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
-              <img src="assets/wsp-gold-clean.png?v=1789843136" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <svg class="w-5 h-5 shrink-0 fill-current text-brand-dark group-hover:rotate-6 transition duration-300" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
               <span>Asesoría Laboral</span>
             </a>
           </div>
@@ -414,7 +448,9 @@
           </div>
           <div class="shrink-0 w-full md:w-auto">
             <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20quiero%20iniciar%20un%20tr%C3%A1mite%20sucesorio%20%2F%20divorcio." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-brand-gold/20 hover:brightness-110 transition group">
-              <img src="assets/wsp-gold-clean.png?v=1789843136" alt="WhatsApp" class="w-5 h-5 object-contain group-hover:rotate-6 transition" />
+              <svg class="w-5 h-5 shrink-0 fill-current text-brand-dark group-hover:rotate-6 transition duration-300" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
               <span>Iniciar Trámite</span>
             </a>
           </div>
@@ -450,7 +486,9 @@
 
         <div class="pt-2">
           <a href="https://api.whatsapp.com/send?phone=5491168559325&text=Hola%20Dra.%20Daniela%2C%20tengo%20demora%20en%20la%20entrega%20de%20mi%20plan%20de%20ahorro%20y%20quiero%20calcular%20la%20multa." target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-brand-gold to-brand-goldLight hover:from-brand-goldLight hover:to-brand-gold text-brand-dark font-bold px-8 py-4 rounded-2xl shadow-xl shadow-brand-gold/20 transition hover:scale-105 group">
-            <img src="assets/wsp-gold-clean.png?v=1789843136" alt="WhatsApp Dorado" class="w-6 h-6 object-contain filter drop-shadow group-hover:rotate-12 transition" />
+            <svg class="w-6 h-6 shrink-0 fill-current text-brand-dark group-hover:rotate-12 transition duration-300" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
             <span>Calcular Multa por WhatsApp Ahora</span>
           </a>
         </div>
@@ -595,8 +633,11 @@
               </select>
             </div>
 
-            <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm rounded-xl shadow-lg transition hover:brightness-110">
-              Enviar Consulta por WhatsApp
+            <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-dark font-bold text-sm rounded-xl shadow-lg transition hover:brightness-110 flex items-center justify-center gap-2.5 group">
+              <svg class="w-5 h-5 shrink-0 fill-current text-brand-dark group-hover:rotate-6 transition duration-300" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>Enviar Consulta por WhatsApp</span>
             </button>
           </form>
         </div>
@@ -639,5 +680,38 @@
     </div>
   </a>
 
+
+  <script>
+    // Initialize Lenis Smooth Scroll
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Smooth anchor navigation with Lenis
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            lenis.scrollTo(targetEl, { offset: -60, duration: 1.4 });
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
